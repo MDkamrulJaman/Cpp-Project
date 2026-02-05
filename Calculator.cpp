@@ -2,26 +2,94 @@
 #include <iostream>
 using namespace std;
 
+class Calculator
+{
 
-int main(){
+public:
+    double num1, num2;
+    char operation;
 
-cout<<"Calculator Project in C++"<<endl;
+    double add(double a, double b)
+    {
+        return a + b;
+    }
 
-char operation;
-double num1, num2;
+    double subtract(double a, double b)
+    {
+        return a - b;
+    }
 
-cout << "Enter first number: ";
-cin >> num1;
+    double multiply(double a, double b)
+    {
+        return a * b;
+    }
 
-cout << "Enter second number: ";
-cin >> num2;
+    double divide(double a, double b)
+    {
+        if (b != 0)
+        {
+            return a / b;
+        }
+        else
+        {
+            cout << "Error: Division by zero!" << endl;
+            return 0; // Return 0 or handle as needed
+        }
+    }
+};
 
-cout << "Enter an operator (+, -, *, /): ";
-cin >> operation;
+int main()
+{
 
+    cout << "Calculator Project in C++" << endl;
 
+    // Create an instance of the Calculator class
+    Calculator calc;
 
+    while (true)
+    {
 
+        cout << "Enter first number: ";
+        cin >> calc.num1;
 
-return 0;
+        cout << "Enter second number: ";
+        cin >> calc.num2;
+
+        cout << "Enter an operator (+, -, *, /): ";
+        cin >> calc.operation;
+
+        switch (calc.operation)
+        {
+
+        case '+':
+            cout << "Addition is:" << calc.add(calc.num1, calc.num2) << endl;
+            break;
+
+        case '-':
+            cout << "Subtraction is:" << calc.subtract(calc.num1, calc.num2) << endl;
+            break;
+
+        case '*':
+            cout << "Multiplication is:" << calc.multiply(calc.num1, calc.num2) << endl;
+            break;
+
+        case '/':
+            cout << "Division is:" << calc.divide(calc.num1, calc.num2) << endl;
+            break;
+        }
+
+    char choice;
+
+    cout << "Do you want to continue? (y/n): ";
+    cin >> choice;
+
+    if (choice != 'y' && choice != 'Y')
+    {
+        break;
+    }
+
+    }
+
+   
+    return 0;
 }
