@@ -6,6 +6,26 @@ class Calculator
 {
 
 public:
+    double add(double a, double b) {
+        return a + b;
+    }
+
+    double subtract(double a, double b) {
+        return a - b;
+    }
+
+    double multiply(double a, double b) {
+        return a * b;
+    }
+
+    double divide(double a, double b) {
+        if (b != 0) {
+            return a / b;
+        } else {
+            cout << "Error: Division by zero!" << endl;
+            return 0; // Return 0 or handle as needed
+        }
+    }
 
 };
 
@@ -26,7 +46,6 @@ cin >> num2;
 
 cout << "Enter an operator (+, -, *, /): ";
 cin >> operation;
-
 
 
 
