@@ -6,6 +6,9 @@ class Calculator
 {
 
 public:
+  double num1, num2;
+  char operation;
+
     double add(double a, double b) {
         return a + b;
     }
@@ -35,20 +38,42 @@ int main(){
 
 cout<<"Calculator Project in C++"<<endl;
 
-char operation;
-double num1, num2;
+
+
+// Create an instance of the Calculator class
+Calculator calc;
 
 cout << "Enter first number: ";
-cin >> num1;
+cin >> calc.num1;
 
 cout << "Enter second number: ";
-cin >> num2;
+cin >> calc.num2;
 
 cout << "Enter an operator (+, -, *, /): ";
-cin >> operation;
+cin >> calc.operation;
 
 
 
+
+switch(calc.operation){
+
+case '+':
+    cout<<"Addition is:"<<calc.add(calc.num1, calc.num2)<<endl;
+    break;
+
+case '-':
+    cout<<"Subtraction is:"<<calc.subtract(calc.num1, calc.num2)<<endl;   
+    break;
+
+case '*':
+    cout<<"Multiplication is:"<<calc.multiply(calc.num1, calc.num2)<<endl;   
+    break;
+
+case '/':
+    cout<<"Division is:"<<calc.divide(calc.num1, calc.num2)<<endl;   
+    break;
+
+}
 
 return 0;
 }
