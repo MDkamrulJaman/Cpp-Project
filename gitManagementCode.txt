@@ -1,0 +1,50 @@
+# CHECK GIT STATUS
+# Shows the status of working directory and staging area
+git status
+
+# STAGE CHANGES
+# Stage all modified files
+git add .
+
+# Stage a specific file
+git add filename
+
+
+# Commit staged changes with a descriptive message
+git commit -m " descriptive comment here"
+
+
+# Push commits to remote repository (creates tracking branch if it doesn't exist)
+git push -u origin
+
+
+# Update local branch with changes from remote
+git pull origin branch_name
+
+
+# Create a new branch
+git branch new_branch_name
+
+# List all local branches
+git branch
+
+# HANDLE MERGE CONFLICTS
+
+# Stage files after resolving conflicts
+git add .
+
+# Add .gitignore to exclude files
+git add .gitignore
+
+# View files with conflicts (unmerged)
+git diff --name-only --diff-filter=U
+
+
+# View commit history
+git log
+
+# Check differences in unstaged changes
+git diff
+
+# Abort a merge if conflicts arise
+git merge --abort
